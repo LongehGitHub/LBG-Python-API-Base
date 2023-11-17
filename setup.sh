@@ -6,7 +6,7 @@ set -e
 
 # Define Docker image name
 
-DOCKER_IMAGE="job00032/api-base"
+DOCKER_IMAGE="lbg"
 
 cleanup() {
 
