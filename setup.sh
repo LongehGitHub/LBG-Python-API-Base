@@ -18,7 +18,7 @@ cleanup() {
 
     docker rm -fv $(docker ps -aq) || true
 
-    docker rmi -fv $(docker images) || true
+    docker rmi -f $(docker images) || true
 
     echo "Cleanup done."
 
