@@ -7,9 +7,8 @@ pipeline {
         stage('Build step') {
 
             steps {
-                sh '''
                 sh "sh setup.sh"
-                '''
+                
             }
 
         }
