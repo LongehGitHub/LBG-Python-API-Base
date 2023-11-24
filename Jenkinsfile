@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        GCR_CREDENTIALS_ID = 'gcp' // The ID you provided in Jenkins credentials
-        IMAGE_NAME = 'test-image-5'
-        GCR_URL = 'gcr.io/lbg-uplift-project'
+        GCR_CREDENTIALS_ID = 'long-jenkins-gcr-key' // The ID you provided in Jenkins credentials
+        IMAGE_NAME = 'long-build-image'
+        GCR_URL = 'gcr.io/lbg-mea-15'
     }
 
     stages {
