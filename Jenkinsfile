@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GCR_CREDENTIALS_ID = 'long-jenkins-gcr-key' // The ID you provided in Jenkins credentials
+        GCR_CREDENTIALS_ID = 'longgcr' // The ID you provided in Jenkins credentials
         IMAGE_NAME = 'long-build-image'
         GCR_URL = 'gcr.io/lbg-mea-15'
     }
