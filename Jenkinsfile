@@ -27,12 +27,35 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy to GKE') {
+        
+        stage('Deploy to GKE Staging') {
             steps {
                 script {
                     // Deploy to GKE using Jenkins Kubernetes Engine Plugin
-                    step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'kubernetes/deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
+                    step([$class: 'KubernetesEngineBuilder', 
+                    projectId: env.PROJECT_ID, 
+                    clusterName: env.CLUSTER_NAME, 
+                    location: env.LOCATION, 
+                    manifestPattern: 'kubernetes/deployment.yaml', 
+                    credentialsId: env.CREDENTIALS_ID, 
+                    verifyDeployments: true, 
+                    namespace: 'staging'])
+                }
+            }
+        }
+
+
+        stage('Deploy to GKE Production') {
+            steps {
+                script {
+                    // Deploy to GKE using Jenkins Kubernetes Engine Plugin
+                    step([$class: 'KubernetesEngineBuilder', 
+                    projectId: env.PROJECT_ID, 
+                    clusterName: env.CLUSTER_NAME, 
+                    location: env.LOCATION, 
+                    manifestPattern: 'kubernetes/deployment.yaml', 
+                    credentialsId: env.CREDENTIALS_ID, 
+                    verifyDeployments: true])
                 }
             }
         }
