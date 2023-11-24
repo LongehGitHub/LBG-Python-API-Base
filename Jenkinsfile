@@ -5,8 +5,8 @@ pipeline {
         IMAGE_NAME = 'long-build-image'
         GCR_URL = 'gcr.io/lbg-mea-15'
         PROJECT_ID = 'lbg-mea-15'
-        CLUSTER_NAME = 'demo-cluster'
-        LOCATION = 'europe-west2-c'
+        CLUSTER_NAME = 'long-cluster'
+        LOCATION = 'europe-west2-a'
         CREDENTIALS_ID = 'ece6548c-a239-4a78-b7f2-c1512cd1d7f2'
     }
 
